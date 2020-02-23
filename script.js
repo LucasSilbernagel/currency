@@ -1,3 +1,4 @@
+
 // Namespace
 const currencyExchange = {};
 
@@ -11,8 +12,8 @@ currencyExchange.init = function() {
     $(`form`).on(`submit`, function(e) {
         e.preventDefault();
 
-    // Move cursor into amount field
-    $("#number").focus();
+        // Move cursor into amount field
+        $("#number").focus();
 
         // Get currency convert calculation from Frankfurter API
         const host = `api.frankfurter.app`;
