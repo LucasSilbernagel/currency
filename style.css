@@ -112,6 +112,7 @@ input[type=number] {
     font-size: 1.5rem;
     border-radius: 15%;
     transition: all ease-in 100ms;
+    box-shadow: 5px 5px #000100;
 }
 
 .submit:hover,
@@ -119,6 +120,10 @@ input[type=number] {
     background: #E0FFFF;
     color: #000000;
     cursor: pointer;
+}
+
+.submit:active {
+    box-shadow: none;
 }
 
 .calculationResult {
