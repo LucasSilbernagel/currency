@@ -1,4 +1,3 @@
-
 // Namespace
 const currencyExchange = {};
 
@@ -11,9 +10,6 @@ currencyExchange.init = function() {
     // Prevent default bahaviour (page reload)
     $(`form`).on(`submit`, function(e) {
         e.preventDefault();
-
-        // Move cursor into amount field
-        $("#number").focus();
 
         // Get currency convert calculation from Frankfurter API
         const host = `api.frankfurter.app`;
