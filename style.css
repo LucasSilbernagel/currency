@@ -32,7 +32,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 38vh;
+    height: 270px;
     width: 100%;
     margin: 0 auto;
 }
@@ -51,7 +51,7 @@ label {
 .label-flex,
 .label-flex2 {
     display: flex;
-    height: 5vh;
+    height: 36px;
     margin: 0 auto;
     justify-content: space-between;
 }
@@ -154,11 +154,11 @@ footer {
     .appContainer {
         min-width: 0;
         width: 95%;
-        height: 80vh;
+        height: 568px;
     }
 
     form {
-        height: 45vh;
+        height: 320px;
     }
 
     label,
@@ -173,11 +173,11 @@ footer {
     }
 
     .label-flex {
-        height: 15vh;
+        height: 107px;
     }
 
     .label-flex2 {
-        height: 8vh;
+        height: 57px;
     }
 
     .calculationResult {
