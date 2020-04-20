@@ -48,6 +48,10 @@ label {
     min-width: 230px;
 }
 
+.labelBaseCurrency {
+    display: none;
+}
+
 .label-flex,
 .label-flex2 {
     display: flex;
