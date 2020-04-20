@@ -1,9 +1,27 @@
 // Namespace
 const currencyExchange = {};
 
+const host = `api.frankfurter.app`;
+
+currencyExchange.getCurrencies = function () {
+    // Get currency list from API
+    fetch(`https://${host}/currencies`)
+    .then(resp => resp.json())
+        .then((data) => {
+            const currencyText = Object.values(data);
+            const currencyKeys = Object.keys(data);
+
+    // Display currencies in dropdown menus
+    for (i = 0; i < currencyKeys.length; i++ ) {
+        $("#baseCurrency").append(`<option value="${currencyKeys[i]}">${currencyText[i]}</option>`)
+        }  
+    for (i = 0; i < currencyKeys.length; i++ ) {
+        $("#targetCurrency").append(`<option value="${currencyKeys[i]}">${currencyText[i]}</option>`)
+        }     
+    });
+}
+
 currencyExchange.calculateCurrency = function () {
-    // Get currency convert calculation from Frankfurter API
-    const host = `api.frankfurter.app`;
     const baseCurrency = $(`#baseCurrency`).val();
     const amount = $(`#number`).val();
     const targetCurrency = $(`#targetCurrency`).val();
@@ -41,7 +59,8 @@ currencyExchange.mobileForm = function () {
 
 currencyExchange.init = function () {
     currencyExchange.preventDefault();
-    currencyExchange.calculateCurrency();
+    currencyExchange.getCurrencies();
+    // currencyExchange.calculateCurrency();
     currencyExchange.mobileForm();
 }
 
