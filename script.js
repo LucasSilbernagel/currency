@@ -3,8 +3,8 @@ const currencyExchange = {};
 
 const host = `api.frankfurter.app`;
 
+// Get currency list from API and display dropdowns
 currencyExchange.getCurrencies = function () {
-    // Get currency list from API
     fetch(`https://${host}/currencies`)
     .then(resp => resp.json())
         .then((data) => {
@@ -21,6 +21,7 @@ currencyExchange.getCurrencies = function () {
     });
 }
 
+// Currency conversion based on user input
 currencyExchange.calculateCurrency = function () {
     const baseCurrency = $(`#baseCurrency`).val();
     const amount = $(`#number`).val();
@@ -39,7 +40,7 @@ currencyExchange.calculateCurrency = function () {
     }
 }
 
-currencyExchange.preventDefault = function () {
+currencyExchange.runCalculation = function () {
     // Prevent default bahaviour (page reload)
     $(`form`).on(`submit`, function(e) {
         e.preventDefault(); 
@@ -58,9 +59,8 @@ currencyExchange.mobileForm = function () {
 }
 
 currencyExchange.init = function () {
-    currencyExchange.preventDefault();
     currencyExchange.getCurrencies();
-    // currencyExchange.calculateCurrency();
+    currencyExchange.runCalculation();
     currencyExchange.mobileForm();
 }
 
