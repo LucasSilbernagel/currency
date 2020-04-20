@@ -4,6 +4,10 @@ body {
     color: #000000;
 }
 
+a {
+    color: #000000;
+}
+
 .appContainer {
     width: 60%;
     min-width: 852px;
